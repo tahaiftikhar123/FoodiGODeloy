@@ -118,5 +118,20 @@ messageRouter.post("/reply", adminAuthMiddleware, async (req, res) => {
     }
 });
 
+messageRouter.post("/delete", adminAuthMiddleware, async (req, res) => {
+    const { messageId } = req.body;
+    try {
+        const message = await messageModel.findByIdAndDelete(messageId);
+        
+        if (!message) {
+            return res.json({ success: false, message: "Message not found." });
+        }
+        
+        res.json({ success: true, message: "Message deleted successfully." });
+    } catch (error) {
+        console.error("Error deleting message:", error);
+        res.json({ success: false, message: "Server error." });
+    }
+});
 
 export default messageRouter;

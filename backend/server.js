@@ -8,7 +8,7 @@ import cartRouter from "./route/cartroute.js";
 import orderRouter from "./route/orderRoute.js";
 import scheduleRouter from "./route/scheduleRoute.js";
 import categoryRouter from "./route/categoryRoute.js";
-
+import topSellingRouter from "./route/topSellingRoute.js";
 import messageRouter from "./route/messageRoute.js";
 import adminAuthRouter from "./route/dminAuthRoute.js";
 import favoritesRouter from "./route/favoritesRoute.js";
@@ -38,6 +38,7 @@ app.use("/api/review", reviewRouter);
 app.use("/api/favorites", favoritesRouter);
 app.use("/api/user", adminAuthRouter);
 app.use("/api/message", messageRouter);
+app.use("/api/topselling", topSellingRouter);
 
 app.get("/", (req, res) => {
   res.send("API Working");

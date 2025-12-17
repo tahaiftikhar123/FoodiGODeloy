@@ -13,7 +13,6 @@ const Footer = () => {
     <footer id="contact" className="footer">
       <div className="footer-container">
         
-        {/* Brand Section */}
         <div className="footer-left">
           <h2 className="footer-logo">Foodi<span>GO</span></h2>
           <p>
@@ -27,22 +26,22 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Owners Section - The Engaging Part */}
         <div className="footer-owners">
           <h3>Project Visionaries</h3>
           <div className="owner-grid">
             {owners.map((owner, index) => (
               <div key={index} className="owner-card">
                 <span className="owner-name">{owner.name}</span>
-                <a href={`mailto:${owner.email}`} className="owner-email">
-                  <FaEnvelope className="email-icon" /> Contact
-                </a>
+                {/* Changed from <a> to <div> to prevent browser redirect */}
+                <div className="owner-contact-info">
+                  <FaEnvelope className="email-icon" />
+                  <span className="email-text">{owner.email}</span>
+                </div>
               </div>
             ))}
           </div>
         </div>
 
-        {/* Quick Links */}
         <div className="footer-middle">
           <h3>Company</h3>
           <ul>

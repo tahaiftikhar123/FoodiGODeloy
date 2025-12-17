@@ -1,95 +1,48 @@
+/* Main Footer Background and Border */
 .footer {
-  background: #1a1a1a; /* Darker, more modern background */
+  background: #1a1a1a; 
   color: #f1f1f1;
   padding: 60px 20px 20px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  border-top: 4px solid #ff9800; /* Vibrant accent line */
+  border-top: 4px solid #ff9800; /* Vibrant orange accent */
 }
 
+/* Main Layout Container */
 .footer-container {
   display: flex;
   justify-content: space-between;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
   max-width: 1200px;
   margin: auto;
 }
 
-/* Logo Styling */
+/* Left Section: Logo & Description */
+.footer-left {
+  flex: 1.5;
+  min-width: 280px;
+}
+
 .footer-logo {
   font-size: 32px;
   font-weight: 800;
   margin-bottom: 15px;
   letter-spacing: -1px;
+  color: #ffffff;
 }
 
 .footer-logo span {
   color: #ff9800;
 }
 
-.footer-left {
-  flex: 1.5;
-  min-width: 280px;
-}
-
 .footer-left p {
   color: #aaa;
   line-height: 1.8;
   margin-bottom: 25px;
+  font-size: 0.95rem;
 }
 
-/* Owner Cards Styling */
-.footer-owners {
-  flex: 2;
-  min-width: 300px;
-}
-
-.footer-owners h3 {
-  margin-bottom: 20px;
-  font-size: 1.2rem;
-  color: #ff9800;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.owner-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-}
-
-.owner-card {
-  background: #262626;
-  padding: 15px;
-  border-radius: 8px;
-  transition: transform 0.3s ease, background 0.3s ease;
-  border: 1px solid #333;
-}
-
-.owner-card:hover {
-  transform: translateY(-5px);
-  background: #333;
-  border-color: #ff9800;
-}
-
-.owner-name {
-  display: block;
-  font-weight: bold;
-  font-size: 0.9rem;
-  margin-bottom: 5px;
-  color: #fff;
-}
-
-.owner-email {
-  font-size: 0.8rem;
-  color: #ff9800;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-}
-
-/* Socials */
+/* Social Media Icons */
 .footer-socials {
   display: flex;
   gap: 12px;
@@ -104,36 +57,153 @@
   justify-content: center;
   border-radius: 50%;
   color: white;
-  transition: 0.3s;
+  transition: all 0.3s ease;
 }
 
 .footer-socials a:hover {
   background: #ff9800;
-  transform: scale(1.1);
+  transform: translateY(-3px) scale(1.1);
 }
 
-/* Bottom */
+/* Owners Section: Visionaries Grid */
+.footer-owners {
+  flex: 2.5;
+  min-width: 320px;
+}
+
+.footer-owners h3 {
+  margin-bottom: 20px;
+  font-size: 1.1rem;
+  color: #ff9800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.owner-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 15px;
+}
+
+.owner-card {
+  background: #262626;
+  padding: 18px;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid #333;
+}
+
+.owner-card:hover {
+  transform: translateY(-8px);
+  background: #2d2d2d;
+  border-color: #ff9800;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.owner-name {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+
+/* Contact Info (Non-Clickable Email) */
+.owner-contact-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ff9800;
+  font-size: 0.75rem;
+  transition: color 0.3s ease;
+  cursor: default;
+}
+
+.email-icon {
+  font-size: 0.85rem;
+  flex-shrink: 0;
+}
+
+.email-text {
+  word-break: break-all;
+  opacity: 0.9;
+}
+
+/* Hover effect for text inside the card */
+.owner-card:hover .owner-contact-info {
+  color: #ffffff;
+}
+
+/* Middle Section: Links */
+.footer-middle {
+  flex: 1;
+  min-width: 180px;
+}
+
+.footer-middle h3 {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-middle li {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  color: #aaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.footer-middle li:hover {
+  color: #ff9800;
+  padding-left: 5px; /* Subtle slide effect */
+}
+
+/* Footer Bottom Bar */
 .footer-bottom {
   text-align: center;
-  margin-top: 50px;
-  padding-top: 20px;
+  margin-top: 60px;
+  padding-top: 25px;
   border-top: 1px solid #333;
   color: #666;
   font-size: 0.85rem;
+  letter-spacing: 0.5px;
 }
 
-/* Responsive */
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .footer-container {
+    gap: 50px;
+  }
+}
+
 @media (max-width: 768px) {
+  .footer {
+    text-align: center;
+    padding: 50px 15px 20px;
+  }
+
   .footer-container {
     flex-direction: column;
-    text-align: center;
+    align-items: center;
   }
-  
-  .footer-socials, .owner-email {
+
+  .footer-socials, 
+  .owner-contact-info {
     justify-content: center;
   }
 
   .owner-grid {
     justify-content: center;
+  }
+
+  .footer-middle ul li:hover {
+    padding-left: 0;
   }
 }

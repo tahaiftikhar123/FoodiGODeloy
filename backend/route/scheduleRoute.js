@@ -6,7 +6,7 @@ import {
     toggleScheduleActive, // CUSTOMER FUNCTION
     updateSchedule,
     deleteSchedule, // CUSTOMER FUNCTION
-    getTopSellingItems,
+    
     adminListSchedules,
     // ⭐ NEW: Import Admin specific functions
     adminToggleScheduleActive, 
@@ -21,7 +21,7 @@ scheduleRoute.get("/list", authMiddleware, listSchedules);
 scheduleRoute.put("/update/:id", authMiddleware, updateSchedule);
 scheduleRoute.put("/toggle/:id", authMiddleware, toggleScheduleActive);
 scheduleRoute.delete('/delete/:id', authMiddleware, deleteSchedule);
-scheduleRoute.get("/top-selling", getTopSellingItems); // Used by Admin Dashboard
+
 
 // --- ADMIN ROUTES (Using new, fixed controllers) ---
 
