@@ -1,0 +1,243 @@
+/* src/pages/Orders/Orders.css */
+
+/* --- General Layout and Page Title --- */
+.order-page {
+    padding: 30px;
+    font-family: sans-serif;
+    background-color: #f8f8f8;
+}
+
+.page-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ff5722; /* Deep Orange Theme Color */
+    border-bottom: 2px solid #ff9800;
+    padding-bottom: 10px;
+}
+
+/* --- Table Structure and Container --- */
+.order-table-container {
+    overflow-x: auto;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.order-table {
+    width: 100%;
+    /* Remove default collapsing border for custom spacing */
+    border-collapse: separate; 
+    border-spacing: 0 10px; /* Vertical spacing between rows */
+    min-width: 800px; /* Ensure table is wide enough for content */
+}
+
+/* --- Table Header Styling --- */
+.table-header-row {
+    background-color: #ffe0b2; /* Light Orange Header Background */
+}
+
+.header-cell {
+    padding: 12px 15px;
+    text-align: left;
+    background-color: #ff9800; /* Primary Orange for Headers */
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    border: none;
+    /* Apply rounded corners only to the header cells */
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+.header-cell:first-child { border-top-left-radius: 8px; }
+.header-cell:last-child { border-top-right-radius: 8px; }
+
+.centered-cell {
+    text-align: center;
+}
+
+/* --- Table Data Row Styling --- */
+.table-data-row {
+    background-color: #fff3e0; /* Very light orange row background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background-color 0.2s;
+    border-radius: 8px;
+}
+
+.table-data-row:hover {
+    background-color: #ffeadf; /* Slightly darker hover color */
+}
+
+.data-cell {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: #444;
+    vertical-align: top; /* Align content to the top */
+}
+
+.data-cell:first-child { border-bottom-left-radius: 8px; border-top-left-radius: 8px; }
+.data-cell:last-child { border-bottom-right-radius: 8px; border-top-right-radius: 8px; }
+
+/* --- Specific Cell Content Styling --- */
+.items-cell {
+    color: #ff5722; /* Highlight items in theme color */
+    font-weight: 500;
+}
+
+.customer-name {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.customer-phone {
+    font-size: 13px;
+    color: #ff9800; /* Orange tone for phone */
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.phone-icon {
+    font-size: 12px;
+    color: #ff9800;
+}
+
+.address-cell {
+    color: #666;
+    max-width: 250px;
+}
+
+.address-zip {
+    font-weight: 500;
+    color: #ff5722;
+}
+
+.price-cell {
+    font-weight: 700;
+    color: #ff5722;
+    font-size: 16px;
+}
+
+/* --- Status Dropdown Styling --- */
+.status-select {
+    padding: 8px 12px;
+    border: 1px solid #ffcc80;
+    border-radius: 6px;
+    background-color: #fff3e0;
+    color: #ff5722;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.status-select:focus {
+    outline: none;
+    border-color: #ff5722;
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.2);
+}
+
+/* Optional: Status-specific color styles for selected option */
+.status-Food-Processing {
+    background-color: #fff3e0;
+    color: #ff9800;
+    border-color: #ff9800;
+}
+.status-Out-for-delivery {
+    background-color: #e3f2fd; /* Light Blue */
+    color: #2196f3;
+    border-color: #2196f3;
+}
+.status-Delivered {
+    background-color: #e8f5e9; /* Light Green */
+    color: #4caf50;
+    border-color: #4caf50;
+}
+
+
+/* Add this to src/pages/Orders/Orders.css */
+.loading-message {
+    text-align: center;
+    padding: 20px;
+    font-size: 18px;
+    color: #ff9800; /* Amber/Orange */
+    margin-top: 20px;
+    background-color: #fff3e0; /* Lightest Orange */
+    border-radius: 8px;
+}
+.no-orders-message {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: #ff5722;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+}
+
+/* ... Keep all your existing Orders.css styles ... */
+
+/* Highlight for New/Unseen Orders */
+.new-order-highlight {
+    background-color: #fef08a; /* Soft yellow background */
+    border-left: 5px solid #f97316; /* Orange stripe on the left */
+    font-weight: 600;
+    cursor: pointer; /* Indicates it's clickable to dismiss the new status */
+    transition: background-color 0.3s ease;
+}
+
+.new-order-highlight:hover {
+    background-color: #fde68a;
+}
+
+/* Optional subtle pulsating effect */
+@keyframes pulse-new {
+    0% { opacity: 1; }
+    50% { opacity: 0.95; }
+    100% { opacity: 1; }
+}
+.new-order-highlight {
+    animation: pulse-new 2s infinite alternate; 
+}
+
+/* Custom styling for status dropdown */
+.status-select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    background-color: #f9f9f9;
+    transition: border-color 0.2s;
+}
+
+.status-select:focus {
+    border-color: var(--orange);
+    outline: none;
+}
+/* ... Keep all your existing Orders.c
+
+ss styles ... */
+
+
+/* ... Keep all your existing Orders.css styles ... */
+
+/* Badge style for new orders next to the title */
+.new-order-badge {
+    margin-left: 15px;
+    padding: 4px 10px;
+    background-color: #ef4444; /* Red color for attention */
+    color: white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    vertical-align: middle;
+}
+
+/* ... Keep all your existing Orders.css styles ... */

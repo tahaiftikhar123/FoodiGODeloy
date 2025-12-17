@@ -1,0 +1,106 @@
+/* src/components/ListSchedules/ListSchedules.css */
+
+/* --- Tomato Theme Colors --- */
+/* Primary: #FF6347 (Tomato Red) */
+/* Secondary: #FA8072 (Salmon) */
+/* Accent: #FFF0F5 (Lavender Blush - for very light backgrounds) */
+
+.list-schedules-table-container {
+    font-family: 'Arial', sans-serif;
+}
+
+.list-schedules-title {
+    color: #FF6347; /* Tomato Red */
+    border-bottom-color: #FA8072 !important; /* Salmon border */
+}
+
+.list-schedules-title svg {
+    color: #FF6347; /* Tomato Red icon */
+}
+
+.list-schedules-table {
+    min-width: 900px; /* Ensure wide enough for content */
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.list-schedules-table thead {
+    background-color: #FFF0F5; /* Light background for header */
+}
+
+.list-schedules-table th {
+    color: #FF6347; /* Tomato Red for header text */
+    font-weight: 700;
+}
+
+/* 🌟 FIX 1: Increase vertical spacing within cells */
+/* Override default Tailwind py-4 (1rem) to py-6 (1.5rem) */
+.list-schedules-table td {
+    padding-top: 1.5rem; /* py-6 */
+    padding-bottom: 1.5rem; /* py-6 */
+}
+
+/* 🌟 FIX 2 & 3: Reduce content boldness and change color for better readability */
+/* Target the main content wrapper (e.g., text-sm font-medium text-gray-900) */
+.schedule-cell-content .text-gray-900 {
+    font-weight: 500 !important; /* Medium weight, less bold */
+    color: #444444 !important; /* Darker gray instead of pure black */
+}
+
+/* Reduce boldness for the total amount to be less shouting */
+.schedule-cell-content .font-bold {
+    font-weight: 600 !important; /* Semi-bold instead of extra bold */
+}
+
+/* Hover effect for data rows */
+.list-schedules-table tbody tr:hover {
+    background-color: #FF634710 !important; /* Very light transparent Tomato */
+}
+
+/* Status colors (tweaked for theme compatibility) */
+.text-green-600.bg-green-100 { /* Completed */
+    color: #008000;
+    background-color: #e6ffe6; 
+}
+
+.text-blue-600.bg-blue-100 { /* Scheduled */
+    color: #1E90FF;
+    background-color: #E6F3FF;
+}
+
+.text-yellow-700.bg-yellow-100 { /* Upcoming (Changed to Orange-Red) */
+    color: #FF4500; /* Orange Red */
+    background-color: #FFF5E6; 
+}
+
+.text-red-700.bg-red-100 { /* DUE NOW (Theme Primary color) */
+    color: #FF6347; /* Tomato Red */
+    background-color: #FFF0F5; /* Lavender Blush */
+    font-weight: bold;
+}
+
+.text-gray-500.bg-gray-100 { /* Paused */
+    color: #555555;
+    background-color: #eeeeee;
+}
+
+/* Action Buttons */
+.action-button.text-red-600 {
+    color: #FF6347; /* Tomato Red for Pause */
+}
+.action-button.text-green-600 {
+    color: #3CB371; /* Medium Sea Green for Resume */
+}
+
+.action-button.hover\:bg-red-100:hover {
+    background-color: #FAEBD7 !important; /* Blanched Almond hover */
+}
+
+.action-button.hover\:bg-green-100:hover {
+    background-color: #F0FFF0 !important; /* Honeydew hover */
+}
+
+.action-button.hover\:text-red-700:hover {
+    color: #B22222; /* Firebrick for Delete hover */
+}

@@ -1,0 +1,80 @@
+.sidebar {
+  height: 100vh; /* Full viewport height */
+  width: 16rem; /* Fixed width */
+  background-color: #ffffff; /* White background */
+  display: flex;
+  flex-direction: column; /* Stack options vertically */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+  position: fixed; /* Keep sidebar in place */
+  top: 60px; /* Start below navbar (adjust if navbar height differs) */
+  left: 0; /* Align to the left edge */
+  z-index: 100; /* Above main content but below navbar (z-index: 200) */
+  
+  transition: transform 0.3s ease; /* Smooth transition for potential future animations */
+}
+
+.sidebar-options {
+  margin-top: 2rem; /* Space from the top of the sidebar */
+  padding: 0; /* No internal padding */
+  flex-grow: 1; /* Allow options to fill available space */
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center; /* Vertically center items */
+  gap: 0.75rem; /* Space between icon and text */
+  padding: 0.75rem 1rem; /* Consistent padding */
+  cursor: pointer; /* Indicate interactivity */
+  text-decoration: none; /* Remove default link underline */
+  transition: background-color 0.2s ease, border-color 0.2s ease; /* Smooth transitions */
+  border-left: 4px solid transparent; /* Highlight for active state */
+  color: #1f2937; /* Default text color */
+}
+
+.sidebar-item:hover {
+  background-color: #fff7ed; /* Light orange hover effect */
+}
+
+.sidebar-item.active {
+  background-color: #ffedd5; /* Highlighted background for active item */
+  border-left: 4px solid #f97316; /* Orange left border for active item */
+  border-right: none; /* No right border */
+  color: #1f2937; /* Ensure text remains readable */
+  font-weight: 600; /* Slightly bolder for active item */
+}
+
+.sidebar-item p {
+  color: inherit; /* Inherit color from parent */
+  font-weight: 500; /* Medium weight for text */
+  margin: 0; /* Remove default margins */
+}
+
+.sidebar-item img {
+  height: 1.25rem; /* Consistent icon size */
+  width: 1.25rem; /* Consistent icon size */
+  vertical-align: middle; /* Align with text */
+}
+.sidebar-icon {
+    font-size: 20px; /* Adjust size as needed */
+    margin-right: 8px; /* Spacing between icon and text */
+    color: #333; /* Default color */
+}
+
+.sidebar-item.active .sidebar-icon {
+    color: tomato; /* Active color */
+}
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar off-screen */
+    transition: transform 0.3s ease; /* Smooth slide effect */
+  }
+
+  .sidebar.open {
+    transform: translateX(0); /* Show sidebar when open */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove margin when sidebar is hidden */
+  }
+}

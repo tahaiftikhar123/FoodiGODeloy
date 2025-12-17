@@ -1,0 +1,79 @@
+/* src/pages/Category/AddCategory.css */
+
+.add-category {
+    width: 100%;
+    max-width: 600px;
+    padding: 25px;
+    margin: 25px auto;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.add-category h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.add-category form.flex-col {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.add-img-upload p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.add-img-upload img {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.add-category-name p,
+.add-category-description p {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.add-category-name input,
+.add-category-description textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+.add-category-description textarea {
+    resize: none; /* Prevent manual resizing */
+    height: 100px;
+}
+
+.add-btn {
+    margin-top: 10px;
+    padding: 12px 20px;
+    border: none;
+    background-color: #ff6600; /* Primary button color */
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+    background-color: #e05c00;
+}

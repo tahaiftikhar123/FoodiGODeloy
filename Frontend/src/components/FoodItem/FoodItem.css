@@ -1,0 +1,152 @@
+.food-item {
+    background-color: #ffffff; /* White background */
+    border-radius: 12px; /* Slightly rounded corners */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+              0 2px 4px -2px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Full width within grid cell */
+    margin: 0.5rem 0.25rem; /* Increased top/bottom margin, kept small left/right margin */
+    padding: 1rem; /* ⬆️ Increased padding for a bulkier card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.food-item:hover {
+    transform: scale(1.05); /* Slight scale on hover */
+    box-shadow: 0 6px 12px -2px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    background-color: #fff7ed; /* Light orange tint on hover */
+}
+
+.food-item-img-container { /* Note: Changed from .food-item-image-container to .food-item-img-container based on JSX */
+    position: relative; /* so buttons stay inside */
+    width: 100%;
+    height: 200px; /* ⬆️ SIGNIFICANT INCREASE for larger image area */
+    border-radius: 8px; /* Rounded corners for image */
+    overflow: hidden;
+}
+
+.food-item-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure image fills container */
+    display: block;
+}
+
+/* Single add button (white +) - Keeping size consistent for now */
+.add {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 36px; /* Slightly larger button */
+    height: 36px; /* Slightly larger button */
+    cursor: pointer;
+    background-color: #f97316;
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2; /* Keeps it above the image */
+}
+
+/* Counter bubble - Keeping size consistent for now */
+.food-itemcount-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Slightly increased gap */
+    background-color: #ffffff;
+    border-radius: 24px; /* Larger radius */
+    padding: 6px 10px; /* Larger padding */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+.food-itemcount-counter img {
+    width: 28px; /* Slightly larger icons */
+    height: 28px; /* Slightly larger icons */
+    cursor: pointer;
+}
+
+.food-itemcount-counter p {
+    margin: 0;
+    font-weight: 600;
+    color: #1f2937;
+}
+
+.food-item-info {
+    padding: 0.75rem 0.5rem 0.5rem; /* ⬆️ Increased top padding for better spacing */
+}
+
+.food-item-name-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.food-item-name-rating p {
+    font-size: 1.25rem; /* ⬆️ Increased font size for name */
+    font-weight: 700; /* Bolder name */
+    color: #1f2937; /* Dark gray for name */
+}
+
+.food-item-name-rating img {
+    height: 20px; /* ⬆️ Slightly larger rating stars */
+}
+
+.food-item-desc {
+    font-size: 0.95rem; /* ⬆️ Increased font size for description */
+    color: #6b7280; /* Gray for description */
+    margin-bottom: 0.75rem; /* Increased bottom margin */
+    line-height: 1.4; /* Better readability */
+}
+
+.food-item-price {
+    font-size: 1.15rem; /* ⬆️ Increased font size for price */
+    font-weight: 700;
+    color: #f97316; /* Orange for price */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    /* Slightly less aggressive scaling on medium screens */
+    .food-item-img-container {
+        height: 180px; 
+    }
+    .food-item-name-rating p {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .food-item {
+        margin: 0.3rem 0.25rem; /* Reduced horizontal margin */
+        padding: 0.8rem;
+    }
+
+    .food-item-img-container {
+        height: 160px; /* Smaller image height */
+    }
+
+    .food-item-name-rating p {
+        font-size: 1.1rem;
+    }
+
+    .food-item-desc {
+        font-size: 0.85rem;
+    }
+
+    .food-item-price {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .food-item {
+        margin: 0.2rem;
+        padding: 0.6rem; 
+    }
+
+    .food-item-img-container {
+        height: 140px; /* Smaller image height */
+    }
+}

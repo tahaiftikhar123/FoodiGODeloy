@@ -1,0 +1,21 @@
+/* Change Swiper Navigation Color */
+:root {
+  --swiper-theme-color: #ff9800;
+  --swiper-navigation-size: 30px;
+}
+
+.swiper-button-next, .swiper-button-prev {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  border-radius: 50%;
+  backdrop-filter: blur(4px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 1s ease-out;
+}

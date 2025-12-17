@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+.app-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.app-content {
+  display: flex;
+  width: 100%;
+  margin-top: 60px; /* Adjust based on navbar height to prevent overlap */
+}
+
+.main-content {
+  flex-grow: 1;
+  margin-left: 16rem;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.navbar-custom {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200; /* Higher than sidebar's z-index: 100 */
+  
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: #e5e7eb; /* Light gray to blend with background */
+  margin: 0;
+}

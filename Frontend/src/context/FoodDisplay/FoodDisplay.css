@@ -1,0 +1,55 @@
+.food_display {
+  padding: 1.5rem;
+  max-width: 1200px; /* Match ExploreMenu for consistency */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.food_display h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1f2937; /* Dark gray for heading */
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 2px solid #f97316; /* Orange underline for theme */
+  padding-bottom: 0.5rem;
+}
+
+.display-food-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr)); /* 4 cards per row on desktop */
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* For 5 cards per row on desktop, uncomment the following: */
+/* .display-food-list {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem; /* Slightly reduced gap for 5 cards 
+} */
+
+@media (max-width: 768px) {
+  .display-food-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 cards per row on tablets */
+    gap: 1rem;
+  }
+
+  .food_display h2 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .display-food-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 cards per row on mobile */
+    gap: 0.75rem;
+  }
+
+  .food_display {
+    padding: 1rem;
+  }
+
+  .food_display h2 {
+    font-size: 1.2rem;
+  }
+}

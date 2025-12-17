@@ -1,0 +1,42 @@
+/* src/components/navbar/Navbar.css */
+
+/* Custom styling for the profile section and dropdown */
+.navbar-profile {
+    position: relative; /* Essential for dropdown positioning */
+    cursor: pointer;
+}
+
+/* The dropdown container */
+.nav-profile-dropdown {
+    position: absolute;
+    top: 100%; /* Position below the profile icon */
+    right: 0;
+    list-style: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    background-color: #fff;
+    z-index: 100; /* Ensure it's above other elements */
+    display: none; /* Initially hidden */
+    min-width: 120px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    margin-top: 10px; /* Small gap between profile icon and dropdown */
+    border: 1px solid #eee;
+}
+
+/* Show dropdown on hover */
+.navbar-profile:hover .nav-profile-dropdown {
+    display: block;
+}
+
+/* Style the logout list item */
+.nav-profile-dropdown li {
+    padding: 5px 0;
+    cursor: pointer;
+    color: #333;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.nav-profile-dropdown li:hover {
+    color: tomato;
+}

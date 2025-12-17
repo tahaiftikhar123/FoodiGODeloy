@@ -1,0 +1,234 @@
+/* src/pages/ListCategory/ListCategory.css */
+
+.list-category {
+    padding: 25px 50px;
+    color: #333;
+    min-height: 100vh;
+}
+
+.list-category h3 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ff6600;
+}
+
+/* --- Table Container --- */
+.list-category-table {
+    width: 100%;
+    max-width: 1000px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 50px;
+}
+
+/* --- Table Row Format --- */
+.list-category-table-format {
+    display: grid;
+    grid-template-columns: 0.8fr 1.5fr 3.5fr 1fr; 
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.list-category-table-format:last-child {
+    border-bottom: none;
+}
+
+.list-category-table-format:not(.title):hover {
+    background-color: #fff8f5;
+}
+
+/* Table Header (Title) */
+.list-category-table-format.title {
+    background-color: #ff6600;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 18px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* --- Image Styling --- */
+.list-category-table-format img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid #eee;
+}
+
+/* --- Description Column --- */
+.description-col {
+    color: #666;
+    line-height: 1.4;
+    max-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Action Buttons --- */
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.action-buttons button {
+    cursor: pointer;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: background-color 0.2s;
+}
+
+.edit-btn {
+    background: #4caf50 !important; /* Green for Edit */
+    color: #fff !important;
+}
+
+.edit-btn:hover {
+    background: #43a047 !important;
+}
+
+.delete-btn {
+    background: #e74c3c !important; /* Red for Delete */
+    color: #fff !important;
+}
+
+.delete-btn:hover {
+    background: #c0392b !important;
+}
+
+/* --- Modal / Overlay Styling --- */
+.edit-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Slightly darker for focus */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.edit-modal {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    flex-direction: column; /* Fixed: was flex-col */
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.edit-modal h3 {
+    margin: 0;
+    color: #333;
+    font-size: 22px;
+}
+
+.edit-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.edit-input-group label {
+    font-weight: 600;
+    font-size: 14px;
+    color: #555;
+}
+
+.edit-input-group input, 
+.edit-input-group textarea {
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    outline-color: #ff6600;
+}
+
+.edit-input-group textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+.modal-btns {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.save-btn {
+    background: #ff6600;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    flex: 2;
+    transition: 0.2s;
+}
+
+.save-btn:hover {
+    background: #e65c00;
+}
+
+.cancel-btn {
+    background: #f0f0f0;
+    color: #333;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    flex: 1;
+    transition: 0.2s;
+}
+
+.cancel-btn:hover {
+    background: #e0e0e0;
+}
+
+/* --- Messages --- */
+.no-data-message {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 18px;
+    color: #999;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 900px) {
+    .list-category {
+        padding: 15px 20px;
+    }
+    .list-category-table-format {
+        grid-template-columns: 0.5fr 1.5fr 1fr;
+        gap: 10px;
+    }
+    .list-category-table-format.title {
+         grid-template-columns: 0.5fr 1.5fr 1fr;
+    }
+    .description-col {
+        display: none;
+    }
+    .edit-modal {
+        width: 90%;
+        padding: 20px;
+    }
+}
