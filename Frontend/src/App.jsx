@@ -7,7 +7,7 @@ import DownloadApp from "./components/App_download/DownloadApp";
 import LoginPopup from "./components/LoginPopup/LoginPopup.jsx";
 import { TopSelling } from "./pages/TopSelling/TopSelling.jsx";
 
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home/home.jsx";
 import Cart from "./pages/cart/cart";
 import PlaceOrder from "./pages/placeorder/placeorder";
 import { Verify } from "./pages/Verify/Verify.jsx";
